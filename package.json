@@ -33,6 +33,7 @@
     "prettier": "^1.17.0"
   },
   "dependencies": {
+    "command-line-args": "^5.1.1",
     "dateformat": "^3.0.3",
     "event-stream": "^4.0.1"
   }
