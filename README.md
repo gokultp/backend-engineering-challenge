@@ -13,11 +13,11 @@ Good luck!
 
 ## How to execute
     1. Make sure node.js is installed in the machine.
-    2. `git clone https://github.com/gokultp/backend-engineering-challenge.git`
-    3. `cd backend-engineering-challenge`
-    4. `npm install`
-    5. `npm run build`
-    6. `node ./build/index.js --input_file <filename> --window_size <window_size>`
+    2. git clone https://github.com/gokultp/backend-engineering-challenge.git
+    3. cd backend-engineering-challenge
+    4. npm install
+    5. npm run build
+    6. node ./build/index.js --input_file <filename> --window_size <window_size>
 ## Challenge Scenario
 
 At Unbabel we deal with a lot of translation data. One of the metrics we use for our clients' SLAs is the delivery time of a translation. 
