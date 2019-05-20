@@ -21,7 +21,7 @@ describe('Test for Arggregator', function () {
     this.timeout(500);
     let a = new Aggregator();
     it('should resolve while parsing a valid data', function () {
-      a.validate({
+      let inp = {
         "timestamp": "2018-12-26 18:12:19.903159",
         "translation_id": "5aa5b2f39f7254a75aa4",
         "source_language": "en",
@@ -30,8 +30,9 @@ describe('Test for Arggregator', function () {
         "event_name": "translation_delivered",
         "duration": 20,
         "nr_words": 100
-      }).then(data => {
-        assert.equal(data, true)
+      }
+      a.validate(inp).then(data => {
+        assert.deepEqual(data, inp)
       })
     });
 
@@ -40,7 +41,6 @@ describe('Test for Arggregator', function () {
       {case : "invalid value for timestamp", in: {"timestamp": "asdf"}, want: "Invalid value for the field timestamp"},
       {case : "there is no duration", in: {"timestamp": "2018-12-26 18:12:19.903159"}, want: "Invalid value for the field duration"},
       {case : "invalid value for duration", in: {"timestamp": "2018-12-26 18:12:19.903159", "duration": "asdf"}, want: "Invalid value for the field duration"},
-
 
     ] 
 
