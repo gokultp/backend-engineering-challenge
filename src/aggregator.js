@@ -1,3 +1,4 @@
+import {isValidDate, isValidNumber} from './utils';
 
 class Aggregator {
     constructor(inputStream, outputStream, window){
@@ -10,7 +11,15 @@ class Aggregator {
         return JSON.parse(data);
     }
 
-   
+    async validate(data){
+        if (!isValidDate(data.timestamp)){
+            throw new Error("Invalid value for the field timestamp")
+        }
+        if (!isValidNumber(data.duration)){
+            throw new Error("Invalid value for the field duration");
+        }
+        return true;
+    } 
 
     exec(){
         
