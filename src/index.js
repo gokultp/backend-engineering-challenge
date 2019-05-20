@@ -15,8 +15,12 @@ const main =()=>{
         console.log("No filename provided");
         process.exit(1);
     }
-    if (!args.window_size) {
+    if (args.window_size == null) {
         console.log("No window size provided");
+        process.exit(1);
+    }
+    if (args.window_size < 1) {
+        console.log("Window size should be > 0");
         process.exit(1);
     }
     let input = fs.createReadStream(args.input_file);
